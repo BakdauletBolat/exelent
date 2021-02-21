@@ -1,0 +1,33 @@
+{% extends 'layouts/app.html' %}
+{% block content %}
+
+<div class="containerform ">
+    {% if messages %}
+    <div class="alert alert-primary" role="alert">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <form action="{% url 'mailsend' %}" method="POST">
+        {% csrf_token %}
+                <div class="col-sm mb-3">
+                    <label for="id_name" class="form-label card-item__name">{{form.name.label}}</label>
+                    {{form.name}}
+                </div>
+                <div class="col-sm mb-3">
+                    <label for="id_email" class="form-label card-item__name">{{form.email.label}}</label>
+                    {{form.email}}
+                </div>
+            
+            <div class="col-sm mb-3">
+                <label for="id_content" class="card-item__name form-label">{{form.content.label}}</label>
+                {{form.content}}
+            </div>
+            <div class="col-sm mb-3">
+                <button class="card-item__contact">Отправить</button>
+            </div>
+       </form>
+</div>
+
+{% endblock %}

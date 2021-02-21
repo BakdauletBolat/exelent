@@ -1,0 +1,101 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% block content %}
+<div class="mt-h main-center-block">
+            
+    <div class="grid-2 block-about-us mt-5">
+        <div class="sidebar">
+            <div class="tabs">
+                <div class="tabs-item">Еxcellent Educational Centre</div>
+                <div class="tabs-item">Области консалтинга</div>
+            </div>
+        </div>
+       
+        <div class="content">
+            <div class="content_item">
+                <div class="style2 mt-5">
+                    <div class="style2__block">
+                        <div class="style2__icon"><i class="fas fa-chevron-double-up"></i></div>
+                        <p class="style2__title">Значительный опыт персонала в области консалтинга </p>
+                    </div>
+                    <div class="style2__block">
+                        <div class="style2__icon"><i class="fas fa-sitemap"></i></div>
+                        <p class="style2__title">Гибкость и адаптивность</p>
+                    </div>
+                    <div class="style2__block">
+                        <div class="style2__icon">180+</div>
+                        <p class="style2__title">Привлечение  более  180 академических экспертов и экспертов из бизнес-среды</p>
+                    </div>
+                </div>
+                <div class="card-row mt-5">
+                    
+                    <article class="card-item">
+                        <div class="card-item__img">
+                            <img src="{% static 'images/ирина.jpeg' %}" alt="">
+                        </div>
+                        <div class="card-item__name">Ефимова Ирина Евгеньевна</div>
+                        <p class="card-item__pos">Директор Excellent Educational Centre</p>
+                        <div class="card-item__des">
+                             Координатор по внедрению системы внутреннего обеспечения качества
+                        </div>
+                        <a href="{% url 'mailsend' %}" class="card-item__contact">Связаться</a>
+                    </article>
+                    <article class="card-item">
+                        <div class="card-item__img">
+                            <img src="{% static 'images/2.jpeg' %}" alt="">
+                        </div>
+                        <div class="card-item__name">Мырзатаева Гульмира</div>
+                        <p class="card-item__pos">Должность Excellent Educational Centre</p>
+                        <div class="card-item__des">
+                            координатор по продвижению в рейтингах QS World Rankings
+                        </div>
+                        <a href="{% url 'mailsend' %}" class="card-item__contact">Связаться</a>
+                    </article>
+                    <article class="card-item">
+                        <div class="card-item__img">
+                            <img src="{% static 'images/3.jpeg'%}" alt="">
+                        </div>
+                        <div class="card-item__name">Макулбекова Гульназ</div>
+                        <p class="card-item__pos">Должность Excellent Educational Centre</p>
+                        <div class="card-item__des">
+                            координатор по продвижению ОП в рейтинге НПП Атамекен
+                        </div>
+                        <a href="{% url 'mailsend' %}" class="card-item__contact">Связаться</a>
+                    </article>
+                </div>
+                <div class="style1 mt-5">
+                   
+                    <div class="style-block" >
+                        <h2 class="style1__title">Год основания (2020)</h2>
+                        <p class="style1__des">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione inventore, temporibus nobis ad at magnam ex obcaecati rem incidunt quidem cumque culpa. Amet, ea nemo ullam iusto dolores inventore nisi.
+                        </p>
+                    </div>    
+                    <img class="style1__img" src="{% static 'images/banner/1.jpeg' %}" alt="">
+                </div>
+               
+                <div class="style1 mt-5">
+                    <p class="style-block style1__title">Сотрудничество с  вузами, профессиональными обществами и бизнесом</p> 
+                    <img class="style1__img" src="{% static 'images/banner/2.jpeg' %}" alt="">
+                       
+                </div>
+        
+                <div class="style1 mt-5" style="margin-bottom: 100px;">
+                   
+                    <p class="style-block style1__title">Оказание услуг с учетом полной адаптации к действуюшим процессам и процедурам университета</p> 
+                </div>
+       
+            </div>
+            <div class="content_item">
+                <div class="lists"> Консалтинг в области обеспечения качества, участия в рейтингах, создания бизнес-инкубаторов и студенческих стартапов</div>
+                <div class="lists">Тренинги и мастер-классы</div>
+                <div class="lists">Оценивание/подготовка к аккредитации</div>
+                <div class="lists">Консультации по развитию организации</div>
+                <div class="lists">Привлечение сторонних консультантов для управления процессами</div>
+                <div class="lists">Управление процессами, составление академических и</div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
