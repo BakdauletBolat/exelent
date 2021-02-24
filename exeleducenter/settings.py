@@ -119,12 +119,10 @@ STATIC_URL = '/static/'
 
 if DEBUG:
     STATIC_DIR = BASE_DIR / 'staticfiles'
-    STATICFILES_DIRS = [
-        STATIC_DIR,
-        BASE_DIR / 'static'
-        
-    ]
 else:
+    STATICFILES_DIRS = [
+        BASE_DIR / 'static'
+    ]
     STATIC_ROOT = BASE_DIR / 'staticfiles'
     
 MEDIA_URL = '/media/'
