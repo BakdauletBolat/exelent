@@ -12,8 +12,10 @@ SECRET_KEY = '2bfilmi^rxbihkryf&7mdjzni=k+!@01*az&0jk-#qu70z1v34'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ['89.219.32.53',]
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
+else:
+    ALLOWED_HOSTS = ['89.219.32.53', 'excellentcenter.kz', 'localhost']
 
 
 # Application definition
@@ -115,8 +117,13 @@ EMAIL_USE_TLS = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-STATICFILES_DIRS = [
-    BASE_DIR/'static'
-]
+if DEBUG:
+    STATIC_DIR = BASE_DIR / 'staticfiles'
+    STATICFILES_DIRS = [
+        STATIC_DIR,
+        
+    ]
+else:
+    STATIC_ROOT = BASE_DIR / 'staticfiles'
+    
+MEDIA_URL = '/media/'
