@@ -121,6 +121,7 @@ if DEBUG:
     STATIC_DIR = BASE_DIR / 'staticfiles'
     STATICFILES_DIRS = [
         STATIC_DIR,
+        BASE_DIR / 'static'
         
     ]
 else:

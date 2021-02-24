@@ -2,28 +2,72 @@
 {% extends 'layouts/app.html' %}
 {% load static %}
 {% block content %}
-<div class="hero_banner block">
-    <div class="main-center-block after-block">
-        <div class="mt-5 title_scale-1dot5 d-left d-flex-center">
-            <div class="text">
-                <h1 class="title_scale-1dot5">ОТ ЛУЧШЕГО К ПРЕВОСХОДНОМУ </h1>
-                <p class="mt-2 title_scale-2 p-medium c-white">Привлечение  более  180 академических экспертов <br> и экспертов из бизнес-среды</p>
-                <a href="{% url 'direction' %}" class="mt-2 btn btn-primary">Подробнее</a>
+<!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <div class="hero_banner block">
+            <div class="main-center-block after-block">
+                <div class="mt-5 title_scale-1dot5 d-left d-flex-center">
+                    <div class="text">
+                        <h1 class="title_scale-1dot5">ОТ ЛУЧШЕГО К ПРЕВОСХОДНОМУ </h1>
+                        <p class="mt-2 title_scale-2 p-medium c-white">Привлечение  более  180 академических экспертов <br> и экспертов из бизнес-среды</p>
+                        <a href="{% url 'direction' %}" class="mt-2 btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
             </div>
         </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="hero_banner2 block">
+            <div class="main-center-block after-block">
+                <div class="mt-5 title_scale-1dot5 d-left d-flex-center">
+                    <div class="text">
+                        <h1 class="title_scale-1dot5">Приглашаем вузы и колледжи к сотрудничеству.</h1>
+                        <p class="mt-2 title_scale-2 p-medium c-white">Наша миссия – развивать казахстанское образование <br> от лучшего к превосходному! </p>
+                        <a href="{% url 'direction' %}" class="mt-2 btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="hero_banner3 block">
+            <div class="main-center-block after-block">
+                <div class="mt-5 title_scale-1dot5 d-left d-flex-center">
+                    <div class="text">
+                        <h1 class="title_scale-1dot5">#excellenteducational </h1>
+                        <p class="mt-2 title_scale-2 p-medium c-white">Дорогие коллеги и друзья! Рады представить Вам новый консалтинговый <br> центр Excellent Educational Centre, объединяющий ведущих экспертов и известных специалистов в <br> области высшего образования и бизнеса! </p>
+                        <a href="{% url 'direction' %}" class="mt-2 btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+     
     </div>
-</div>
+    
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+  </div>
 
-<div class="main-center-block">
+
+<div class="main-center-block mt-5">
 
     <div class="block">
         <div class="block_inner">
             <div class="block_scale-2">
-                <h2 class="title_scale-2">why the <span>excellent</span> <span>education</span> <span>center</span></h2>
+                <h2 class="title_scale-2">Наш центр оказывает консалтинговые услуги в следующих областях:</h2>
             </div>
                 <p class="text_scale-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident at, debitis deserunt dolorum dignissimos, reiciendis quae pariatur facilis ut voluptatibus ad corrupti voluptatem ullam nostrum dicta blanditiis et nulla beatae.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem numquam magnam enim id unde, aperiam dolor itaque quia quaerat repudiandae laborum veritatis. Magnam fugit fugiat necessitatibus iste aliquam esse veniam?
+                    • разработкв и внедрения Системы внутреннего обеспечения качества, основанного на Европейских стандартах и руководящих принципах (ESG) <br>
+                    •  продвижение позиций университетов в QS World University Rankings, <br>
+                    •  улучшение позиций образовательных программ в рейтинге Национальной Палаты Предпринимателей Атамекен,  <br>
+                    • создание университетских бизнес-инкубаторов и развития студенческих старт-апов, <br>
+                    • разработка образовательных программ в соответствии с лучшей мировой практикой.  <br>
                 </p>
         </div>
     </div>
@@ -44,11 +88,11 @@
             </div>
             <div class="per50_body">
                 <div class="block_scale-1">
-                    <h3 class="title_scale-1">your succes determines our</h3>
+                    <h3 style="font-size: 36px;" class="title_scale-1">Наша миссия – развивать казахстанское образование от лучшего к превосходному!</h3>
                 </div>
                 <p class="text_scale-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quibusdam illo dolorem cupiditate dicta molestiae, voluptates accusamus unde. Quos, commodi sapiente. Fugiat soluta, nulla at possimus doloribus obcaecati consequatur beatae?
-                    In enim est corporis nostrum reprehenderit dignissimos asperiores neque voluptatum.
+                    К оказанию консалтинговых услуг Excellent Education Сentre привлекаются ведущие международные и национальные эксперты, имеющие значительный опыт и высокие результаты в соответствующих областях развития высшего образования. 
+	Консалтинг осуществляется на казахском и/или русском языках, с привлечением лучших иностранных консультантов.
                 </p>
             </div>
         </div>
