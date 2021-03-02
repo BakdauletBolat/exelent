@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '2bfilmi^rxbihkryf&7mdjzni=k+!@01*az&0jk-#qu70z1v34'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 if DEBUG:
     ALLOWED_HOSTS = ['*']
 else:
@@ -118,7 +118,10 @@ EMAIL_USE_TLS = True
 STATIC_URL = '/static/'
 
 if DEBUG:
-    STATIC_DIR = BASE_DIR / 'staticfiles'
+    STATIC_ROOT = BASE_DIR / 'staticfiles'
+    STATICFILES_DIRS = [
+        BASE_DIR / 'static'
+    ]
 else:
     STATICFILES_DIRS = [
         BASE_DIR / 'static'
