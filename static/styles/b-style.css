@@ -31,6 +31,16 @@ body{
     border-bottom: 2px dashed rgba(192, 192, 192, 0.486);
     background-color: white;
 }
+.info{
+    color:rgb(238, 224, 32)!important;
+}
+.time{
+    color: rgb(241, 37, 37)!important;
+}
+.lists span{
+    color:rgb(34, 214, 28);
+    margin-right: 5px;
+}
 .lists:last-child{
     border-bottom: none;
     border-bottom-right-radius: 10px;
@@ -185,6 +195,7 @@ body{
 
 .tabstop{
     display: flex;
+    flex-wrap: wrap;
 }
 .tabstop__item{
     padding: 10px;
@@ -270,6 +281,9 @@ body{
     .style1__title{
         font-size: 24px;
     }
+    .tabstop__item{
+        flex-basis: 100%;
+    }
 }
 .footer{
     background-color: var(--first-color);
@@ -305,7 +319,6 @@ body{
 }
 .logo-area img{
     width: 100%;
-    height: 100%;
 }
 .inf-block{
     display: flex;
@@ -325,6 +338,67 @@ body{
     color:var(--second-color);
     text-align: center;
 }
+.lists__header{
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+    margin: 20px 0;
+    font-size: 2rem;
+    color: #0F4474;
+    padding: 1rem;
+}
+
+
+.containerform{
+    max-width: 580px;
+    margin: 120px auto;
+
+}
+
+.lefta{
+    object-fit: contain;
+}
+.contact{
+    display: flex;
+    margin-top: 120px;
+    font-size: 16px;
+}
+.contacts{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 320px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+.mxauto{
+    margin: 20px auto!important;
+}
+.contact__item{
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin:10px;
+    flex-basis: 50%;
+    color:#0F4474;
+    height: 70vh;
+    margin-bottom: 20px;
+}
+.contact__item h3{
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 20px;    
+}
+.contact__item p{
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;  
+}
+.contact__item .contacts{
+    font-size: 20px;
+}
+
 @media screen and (max-width:500px){
     .card-item__img{
         width: 100%;
@@ -353,15 +427,12 @@ body{
     .swiper-button-next{
         display: none;
     }
+    .contact{
+        flex-wrap: wrap;
+    }
+    .contact__item{
+        flex-basis: 100%;
+    }
 }
 
 
-.containerform{
-    max-width: 580px;
-    margin: 120px auto;
-
-}
-
-.lefta{
-    object-fit: contain;
-}

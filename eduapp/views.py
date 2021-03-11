@@ -17,3 +17,7 @@ def direction(request):
 def training(request):
 
     return render(request,'eduapp/training.html')
+
+def contact(request):
+
+    return render(request,'eduapp/contact.html')
