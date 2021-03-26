@@ -15,7 +15,7 @@ def index(request):
             content = """
                Благодарим Вас за регистрацию! Ссылка на участие в семинаре будет направлена Вам на электронную почту в день проведения семинара.
             """
-            mail = send_mail(name, content, 'excellent@mail.kz', [cd['email'],'gulnaz_808@mail.ru','bakosh21345@gmail.com'])
+            mail = send_mail(name, content, 'excellent@mail.kz', [cd['email'],'gulnaz_808@mail.ru','excellent.kaz@bk.ru','bakosh21345@gmail.com'])
             if mail:
                 form.save()
                 messages.success(request, f'{name}! Благодарим Вас за регистрацию! Ссылка на участие в семинаре будет направлена Вам на электронную почту в день проведения семинара.')
