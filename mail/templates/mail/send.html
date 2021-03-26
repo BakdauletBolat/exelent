@@ -1,33 +1,92 @@
 {% extends 'layouts/app.html' %}
+{% load static %}
 {% block content %}
 
-<div class="containerform ">
-    {% if messages %}
+<div class="container" style="color:'#0f4474'">
+  <div class="text-center">
+    <img class="d-block mb-4 mt-10 mx-auto" src="{% static 'images/logo/logo-smaller.png' %}" alt="" height="100px">
+    <h2 class="title">Форма заявки на участие <br> в Международном семинаре</h2>
+    <p class="lead">Подготовка и прохождение международной аккредитации в ASIIN: критерии и процедуры</p>
+  </div>
+     {% if messages %}
     <div class="alert alert-primary" role="alert">
         {% for message in messages %}
         <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
         {% endfor %}
       </div>
     {% endif %}
-    <form action="{% url 'mailsend' %}" method="POST">
-        {% csrf_token %}
-                <div class="col-sm mb-3">
-                    <label for="id_name" class="form-label card-item__name">{{form.name.label}}</label>
-                    {{form.name}}
-                </div>
-                <div class="col-sm mb-3">
-                    <label for="id_email" class="form-label card-item__name">{{form.email.label}}</label>
-                    {{form.email}}
-                </div>
-            
-            <div class="col-sm mb-3">
-                <label for="id_content" class="card-item__name form-label">{{form.content.label}}</label>
-                {{form.content}}
+
+  <div class="row">
+
+    <div class="col-md-8 order-md-1 mxauto">
+      <h4 class="mb-3">Заполнение формы</h4>
+      <form action="{% url 'mailsend' %}" method="POST" class="needs-validation" novalidate="">
+          {% csrf_token %}
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Отчество</label>
+            {{ form.lastname }}
+            <div class="invalid-feedback">
+              Отчество обязательно
             </div>
-            <div class="col-sm mb-3">
-                <button class="card-item__contact">Отправить</button>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Фамилия</label>
+              {{ form.surname }}
+            <div class="invalid-feedback">
+              Фамилия обязательно
             </div>
-       </form>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="username">Имя</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            {{ form.name }}
+            <div class="invalid-feedback" style="width: 100%;">
+              Имя обязательно
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email <span class="text-muted">(Обязательно)</span></label>
+          {{ form.email }}
+          <div class="invalid-feedback">
+            email обязательно
+          </div>
+        </div>
+
+
+
+        <div class="mb-3">
+          <label for="address2">Контактный телефон:</label>
+            {{ form.phone }}
+        </div>
+         <div class="mb-3">
+          <label for="address2">Укажите вуз, в котором вы работаете*</label>
+             {{ form.universityjob }}
+        </div>
+          <div class="mb-3">
+          <label for="address">Укажите Вашу должность:</label>
+          {{ form.position }}
+
+        </div>
+
+        <div class="custom-control custom-checkbox">
+            {{ form.consent }}
+          <label class="custom-control-label" for="save-info">
+                Ваше согласие на обработку персональных данных: *</label>
+        </div>
+
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+
 </div>
 
 {% endblock %}

@@ -2,4 +2,10 @@ from django.contrib import admin
 from .models import Mail
 # Register your models here.
 
-admin.site.register(Mail)
+
+class MailAdmin(admin.ModelAdmin):
+    model = Mail
+    search_fields = ['name', 'phone','email']
+    list_display = ('surname','lastname','name','phone','email','universityjob','position','consent')
+
+admin.site.register(Mail,MailAdmin)

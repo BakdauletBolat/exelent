@@ -11,18 +11,22 @@ def index(request):
         form = MailForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data 
-            name = 'Уважемый '+cd['name']  
-            message = cd['content']   
-            mail = send_mail(name, message, 'excellent@mail.kz', [cd['email']])   
+            name = 'Уважаемый '+cd['name']
+            content = """
+               Благодарим Вас за регистрацию! Ссылка на участие в семинаре будет направлена Вам на электронную почту в день проведения семинара.
+            """
+            mail = send_mail(name, content, 'excellent@mail.kz', [cd['email'],'gulnaz_808@mail.ru','bakosh21345@gmail.com'])
             if mail:
                 form.save()
-                messages.success(request, 'Ваше письмо успешно отправлено спасибо за ваш отклик'+name)
-                return redirect('index')    
+                messages.success(request, f'{name}! Благодарим Вас за регистрацию! Ссылка на участие в семинаре будет направлена Вам на электронную почту в день проведения семинара.')
+                return redirect('mailsend')
             else:
                 messages.error(request, 'Ошибка при отправление письмо')
+                return redirect('mailsend')
         else:
             messages.error(request, 'Вы ввели неправильные данные')
-            
+            return redirect('mailsend')
+
     else:       
         form = MailForm()
 

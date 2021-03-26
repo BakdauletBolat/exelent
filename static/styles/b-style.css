@@ -146,11 +146,22 @@ body{
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
 }
+label{
+    margin-bottom: 0.5rem;
+}
+.title{
+    font-weight: 900;
+    font-size: 24px;
+    color:var(--first-color);
+    margin-bottom: 20px;
+}
 .card-item__name{
     color:var(--first-color);
+
     font-weight: 700;
     font-size: 20px;
     margin: 20px;
+    margin-left: 0px;
 }
 .card-item__img{
     width: 100%;
@@ -433,6 +444,18 @@ body{
     .contact__item{
         flex-basis: 100%;
     }
+}
+
+.navigation_items-blue{
+    padding: 0px 20px;
+    border-radius: 4px;
+    border:1px solid rgba(254, 127, 118, 1);
+}
+.navigation_items-blue:hover{
+    background: rgba(254, 127, 118, 1);;
+}
+.navigation_items-blue:hover .navigation_links{
+    color:white;
 }
 
 
