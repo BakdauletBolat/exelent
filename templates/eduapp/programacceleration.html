@@ -1,0 +1,51 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% block title %}
+ПРОГРАММА АКСЕЛЕРАЦИИ
+{% endblock %}
+{% block content %}
+<div class="acceleration-program-wrapper mt-10 mb-10 container">
+        <h3 class="acceleration-program-title">Концепция</h3>
+        <div class="acceleration-program">
+            <div class="acceleration-program__item">
+                <i class="fas fa-folder acceleration-program__icon"></i><a class="acceleration-program__link" href="{% static 'pdfs/consection.pdf' %}" download>Концепция файла</a>
+            </div>
+        </div>
+        <h3 class="acceleration-program-title">Методология </h3>
+        <div class="acceleration-program">
+            <div class="acceleration-program__item">
+                <i class="fas fa-folder acceleration-program__icon"></i><a class="acceleration-program__link" href="{% static 'pdfs/astanahub.pdf.pdf' %}" download>Методология файла</a>
+            </div>
+        </div>
+        <h3 class="acceleration-program-title"> Письмо поддержки от Жас Отан </h3>
+        <div class="acceleration-program">
+            <div class="acceleration-program__item">
+                <i class="fas fa-folder acceleration-program__icon"></i><a class="acceleration-program__link" href="{% static 'pdfs/jasotan.pdf' %}" download>Письмо поддержки от Жас Отан файла</a>
+            </div>
+        </div>
+        <h3 class="acceleration-program-title">Резюме</h3>
+        <div class="acceleration-program">
+            <div class="acceleration-program__item">
+                <i class="fas fa-folder acceleration-program__icon"></i><a class="acceleration-program__link" href="{% static 'pdfs/irina.pdf' %}" download>Ирина Евгеньевна</a>
+            </div>
+            <div class="acceleration-program__item">
+                <i class="fas fa-folder acceleration-program__icon"></i><a class="acceleration-program__link" href="{% static 'pdfs/askar.pdf' %}" download>Аскар Бегдаулетович</a>
+            </div>
+            <div class="acceleration-program__item">
+                <i class="fas fa-folder acceleration-program__icon"></i><a class="acceleration-program__link" href="{% static 'pdfs/gulmira.pdf' %}" download>Гульмира</a>
+            </div>
+            <div class="acceleration-program__item">
+                <i class="fas fa-folder acceleration-program__icon"></i><a class="acceleration-program__link" href="{% static 'pdfs/Camshat.pdf' %}" download>Камшат</a>
+            </div>
+            <div class="acceleration-program__item">
+                <i class="fas fa-folder acceleration-program__icon"></i><a class="acceleration-program__link" href="{% static 'pdfs/aziza.pdf' %}" download>Азиза</a>
+            </div>
+            <div class="acceleration-program__item">
+                <i class="fas fa-folder acceleration-program__icon"></i><a class="acceleration-program__link" href="{% static 'pdfs/berik.pdf' %}" download>Берик</a>
+            </div>
+            <div class="acceleration-program__item ">
+                <i class="fas fa-folder acceleration-program__icon"></i><a class="acceleration-program__link" href="{% static 'pdfs/said.pdf' %}" download>Саид</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

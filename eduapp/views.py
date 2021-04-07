@@ -10,6 +10,10 @@ def aboutUs(request):
 
     return render(request,'eduapp/about-us.html')
 
+def accelerationProgramm(request):
+
+    return render(request,'eduapp/programacceleration.html')
+
 def direction(request):
 
     return render(request,'eduapp/direction.html')
