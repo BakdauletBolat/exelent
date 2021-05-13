@@ -14,16 +14,16 @@ class MailForm(forms.ModelForm):
             'class': 'form-control col-6',
         })
     )
-    universityjob = forms.CharField(
-        widget=forms.TextInput(attrs={
-            'class': 'form-control col-6',
-        })
-    )
-    position = forms.CharField(
-        widget=forms.TextInput(attrs={
-            'class': 'form-control col-6',
-        })
-    )
+    # universityjob = forms.CharField(
+    #     widget=forms.TextInput(attrs={
+    #         'class': 'form-control col-6',
+    #     })
+    # )
+    # position = forms.CharField(
+    #     widget=forms.TextInput(attrs={
+    #         'class': 'form-control col-6',
+    #     })
+    # )
     consent = forms.Field(
         widget=forms.CheckboxInput(attrs={
             'class': 'custom-control-input',
