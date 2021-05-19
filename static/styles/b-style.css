@@ -137,7 +137,6 @@ body{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    align-items: center;
     grid-gap:30px;
     justify-content: space-between;
 }
@@ -499,4 +498,21 @@ label{
     text-transform: uppercase;
 }
 
+.pages-background{
+    background-color:white;
+    padding-top:10px;
+    margin-top:120px;
+    padding-bottom:120px;
+}
+.img-page{
+    float:right;
+    max-width:400px;
+    margin:20px;
+}
+.breadcamp{
+font-size:10px;
+color:black;
+margin-bottom:20px;
+margin-top:20px;
+}
 

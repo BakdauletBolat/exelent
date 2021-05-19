@@ -1,10 +1,16 @@
 from django.shortcuts import render
-
+from .models import Page, Slider
 # Create your views here.
 
 def main(request):
+    slides = Slider.objects.all()
+    pages = Page.objects.all()
 
-    return render(request,'eduapp/index.html')
+    data = {
+        'slides': slides,
+        'pages': pages
+    }
+    return render(request,'eduapp/index.html', data)
 
 def aboutUs(request):
 
@@ -25,3 +31,10 @@ def training(request):
 def contact(request):
 
     return render(request,'eduapp/contact.html')
+
+def page_detail(request, pk):
+    page = Page.objects.get(id=pk)
+    data = {
+        'page':page
+    }
+    return render(request, 'eduapp/page/page_detail.html',data)

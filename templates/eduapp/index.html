@@ -11,46 +11,21 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
+        {% for slide in slides  %}
       <div class="swiper-slide">
-        <div class="hero_banner block">
+        <div class="block" style="width:100%; height:100vh; position:relative; background: url({{slide.image.url}})  center/cover no-repeat">
             <div class="main-center-block after-block">
                 <div class="mt-5 title_scale-1dot5 d-left d-flex-center">
-                    <div class="text">
-                        <h1 class="title_scale-1dot5">ОТ ЛУЧШЕГО К ПРЕВОСХОДНОМУ </h1>
-                        <p class="mt-2 title_scale-2 p-medium c-white">Привлечение  более  180 академических экспертов <br> и экспертов из бизнес-среды</p>
-                        <a href="{% url 'direction' %}" class="mt-2 btn btn-primary">Подробнее</a>
+                    <div class="text" style="max-width:550px">
+                        <h1 class="title_scale-1dot5">{{ slide.title }}</h1>
+                        <p class="mt-2 title_scale-2 p-medium c-white">{{slide.subTitle}}</p>
+                        <a href="{{slide.lintTo}}" class="mt-2 btn btn-primary">Подробнее</a>
                     </div>
                 </div>
             </div>
         </div>
       </div>
-      <!-- <div class="swiper-slide">
-        <div class="hero_banner2 block">
-            <div class="main-center-block after-block">
-                <div class="mt-5 title_scale-1dot5 d-left d-flex-center">
-                    <div class="text">
-                        <h1 class="title_scale-1dot5">Форма заявки на участие в Международном семинаре </h1>
-                        <p class="mt-2 title_scale-2 p-medium c-white">Подготовка и прохождение международной аккредитации в ASIIN: критерии и процедуры</p>
-                        <a href="{% url 'mailsend' %}" class="mt-2 btn btn-primary">Регистрация</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div> -->
-      <div class="swiper-slide">
-        <div class="hero_banner3 block">
-            <div class="main-center-block after-block">
-                <div class="mt-5 title_scale-1dot5 d-left d-flex-center">
-                    <div class="text">
-                        <h1 class="title_scale-1dot5">#excellenteducational </h1>
-                        <p class="mt-2 title_scale-2 p-medium c-white">Дорогие коллеги и друзья! Рады представить Вам новый консалтинговый <br> центр Excellent Educational Centre, объединяющий ведущих экспертов и известных специалистов в <br> области высшего образования и бизнеса! </p>
-                        <a href="{% url 'direction' %}" class="mt-2 btn btn-primary">Подробнее</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
-
+        {% endfor %}
     </div>
 
     <div class="swiper-button-prev"></div>
@@ -61,6 +36,25 @@
 
 <div class="main-center-block mt-5">
 
+    <div class="block">
+         <div class="block_scale-2">
+                <h2 class="title_scale-2">Объявление</h2>
+            </div>
+        <div class="card-row mt-5">
+            {% for page in pages %}
+                    <article class="card-item">
+                        <div class="card-item__img">
+                            <img src="{{ page.image.url }}" alt="">
+                        </div>
+                        <div class="card-item__name">{{page.title}}</div>
+                        <div class="card-item__des">
+                            {{page.shortDescription}}
+                        </div>
+                        <a href="{{page.get_absolute_url}}" class="card-item__contact">Подробнее</a>
+                    </article>
+            {% endfor %}
+                </div>
+    </div>
     <div class="block">
         <div class="block_inner">
             <div class="block_scale-2">
@@ -122,7 +116,7 @@
 
 </div> <!-- main-center-block -->
 
-
+</div>
 <!-- <script
 src="https://code.jquery.com/jquery-3.5.1.js"
 integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
