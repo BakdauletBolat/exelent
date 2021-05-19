@@ -144,6 +144,7 @@ body{
     padding: 30px;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
+    max-width:500px;
 }
 label{
     margin-bottom: 0.5rem;
@@ -180,6 +181,7 @@ label{
 }
 .card-item__des{
     margin: 20px;
+    margin-left:0px;
     font-size: 15px;
     font-weight: 500;
     color:var(--first-color);
