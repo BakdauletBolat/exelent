@@ -4,7 +4,7 @@ from .models import Page, Slider
 
 def main(request):
     slides = Slider.objects.all()
-    pages = Page.objects.all().filter('-created_at')
+    pages = Page.objects.all().order_by('-created_at')
 
     data = {
         'slides': slides,
