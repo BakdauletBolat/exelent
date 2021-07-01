@@ -9,9 +9,11 @@
         <div class="breadcamp">
             <p class="breadcamp-text"><a href="/">Главное меню</a> > <span>{{page.title}}</span></p>
         </div>
+            {% if page.file %}
            <div class="acceleration-program__item mb-5">
                 <i class="fas fa-folder acceleration-program__icon"></i><a class="acceleration-program__link" href="{{page.file.url}}" download>Скачать PDF документ</a>
             </div>
+            {% endif %}
          <h2 class="title_scale-2">{{page.title}}</h2>
 
         <div class="text_scale-2">
