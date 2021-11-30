@@ -124,7 +124,7 @@ EMAIL_HOST = 'post.mail.kz'
 EMAIL_HOST_USER = 'excellent@mail.kz'
 EMAIL_HOST_PASSWORD = 'baguvix123F' 
 EMAIL_PORT = 587 
-EMAIL_USE_TLS = True
+EMAIL_USE_TLS = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
