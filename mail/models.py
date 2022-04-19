@@ -21,6 +21,7 @@ class Mail(models.Model):
     position = models.CharField('Должность',max_length=255,blank=True,null=True)
     typeSeminar = models.ForeignKey(TypeSeminar,on_delete=models.CASCADE,null=True,blank=True)
     consent = models.BooleanField('Согласие',blank=True,null=True)
+    created_at = models.DateTimeField('Дата',auto_now_add=True,null=True,blank=True)
 
     def __str__(self):
         return self.name
