@@ -1,0 +1,21 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% block title %}
+{{ page.title }}
+{% endblock %}
+{% block content %}
+<div class="registerSeminar">
+    <div class="container registerSeminar__row">
+
+        {% for typeSeminar in typeSeminars %}
+        <a href="{% url 'mailsend' typeSeminar.id %}" class="choose__item">
+            <img class="choose__img" src="{{typeSeminar.image.url}}" alt="">
+            <h2  class="choose__title">{{typeSeminar.name}}</h2>
+            <div class="choose__button-container">
+                <div class="choose__button" href="#">Выбрать</div>
+            </div> 
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

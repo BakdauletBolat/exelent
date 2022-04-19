@@ -1,8 +1,9 @@
-from .views import main,aboutUs,direction,training,contact,accelerationProgramm, page_detail
+from .views import main,aboutUs,direction,training,contact,accelerationProgramm, page_detail,registerSeminarPage
 from django.urls import path,include
 
 urlpatterns = [
     path('', main, name="index"),
+    path('register-seminar/',registerSeminarPage,name='register-seminar'),
     path('mail', include('mail.urls')),
     path('accelereationprogramm/', accelerationProgramm, name="aprogram"),
     path('about-us/', aboutUs, name="aboutUs"),

@@ -2,5 +2,5 @@ from .views import index
 from django.urls import path
 
 urlpatterns = [
-    path('',index,name="mailsend")
+    path('<int:pk>/',index,name="mailsend")
 ]

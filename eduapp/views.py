@@ -1,6 +1,17 @@
 from django.shortcuts import render
+
+from mail.models import TypeSeminar
 from .models import Page, Slider
-# Create your views here.
+
+
+def registerSeminarPage(request):
+    typeSeminars = TypeSeminar.objects.filter(is_active=True)
+
+    context = {
+        'typeSeminars':typeSeminars
+    }
+    return render(request,'eduapp/page/registerSeminar.html',context)
+
 
 def main(request):
     slides = Slider.objects.all()

@@ -4,13 +4,8 @@
 
 <div class="container" style="color:'#0f4474'">
   <div class="text-center mt-10 mb-4">
-<!--    <img class="d-block mb-4 mt-10 mx-auto" src="{% static 'images/asiin-logo.png' %}" alt="" height="100px">-->
       <h2 class="title" style="font-size: 20px">Заявка на курсы повышения квалификации:</h2>
-      <h2 class="lead">- Экономические дисциплины и цифровые технологии преподавания в смешанном формате <br>
-        -Юридические дисциплины и цифровые технологии преподавания в смешанном формате <br>
-        -IT технологии/робототехника и цифровые технологии преподавания</h2>
-<!--    <h2 class="title" style="font-size: 30px">Форма заявки на участие <br> в Международном семинаре</h2>-->
-<!--    <p class="lead">Подготовка и прохождение международной аккредитации в ASIIN: критерии и процедуры</p>-->
+      <h2 class="lead" style="max-width: 800px; text-align:center; margin:0 auto">{{typeSeminar.name}}</h2>
   </div>
      {% if messages %}
     <div class="alert alert-primary" role="alert">
@@ -24,7 +19,7 @@
 
     <div class="col-md-8 order-md-1 mxauto">
       <h4 class="mb-3">Заполнение формы</h4>
-      <form action="{% url 'mailsend' %}" method="POST" class="needs-validation" novalidate="">
+      <form action="{% url 'mailsend' typeSeminar.id  %}" method="POST" class="needs-validation" novalidate="">
           {% csrf_token %}
         <div class="row">
           <div class="col-md-6 mb-3">
@@ -88,6 +83,7 @@
 
         <button class="btn btn-primary btn-lg btn-block" type="submit">Отправить</button>
       </form>
+      <div style="height:40px"></div>
     </div>
   </div>
 

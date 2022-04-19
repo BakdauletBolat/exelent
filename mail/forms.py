@@ -33,7 +33,7 @@ class MailForm(forms.ModelForm):
         label = "Пишите свою имя",
         widget=forms.TextInput(attrs={
             'class':'form-control col-6',
-            'placeholder':'Пишите ФИО'
+            'placeholder':'Пишите имя'
         })
     )
 
