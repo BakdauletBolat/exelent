@@ -7,6 +7,11 @@ class TypeSeminar(models.Model):
     is_active = models.BooleanField(default=True)
     image = models.ImageField(upload_to='TypeSeminar/',null=True,blank=True)
 
+    class Meta:
+
+        verbose_name = "Тип семинара"
+        verbose_name_plural = "Типы семинара"
+
     def __str__(self):
         return self.name
 
@@ -19,7 +24,7 @@ class Mail(models.Model):
     phone = models.CharField('Контактный телефон:',max_length=255)
     universityjob = models.CharField('Вуз',max_length=255,blank=True,null=True)
     position = models.CharField('Должность',max_length=255,blank=True,null=True)
-    typeSeminar = models.ForeignKey(TypeSeminar,on_delete=models.CASCADE,null=True,blank=True)
+    typeSeminar = models.ForeignKey(TypeSeminar,on_delete=models.CASCADE,null=True,blank=True,verbose_name='Тип семинара')
     consent = models.BooleanField('Согласие',blank=True,null=True)
     created_at = models.DateTimeField('Дата',auto_now_add=True,null=True,blank=True)
 

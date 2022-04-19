@@ -4,24 +4,40 @@
 
 <div class="container" style="color:'#0f4474'">
   <div class="text-center mt-10 mb-4">
-      <h2 class="title" style="font-size: 20px">Заявка на курсы повышения квалификации:</h2>
-      <h2 class="lead" style="max-width: 800px; text-align:center; margin:0 auto">{{typeSeminar.name}}</h2>
+    <h2 class="title" style="font-size: 20px">Заявка на курсы повышения квалификации:</h2>
+    <h2 class="lead" style="max-width: 800px; text-align:center; margin:0 auto">{{typeSeminar.name}}</h2>
   </div>
-     {% if messages %}
-    <div class="alert alert-primary" role="alert">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-      </div>
-    {% endif %}
+  {% if messages %}
+  <div class="alert alert-primary" role="alert">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+      {% endfor %}
+  </div>
+  {% endif %}
 
   <div class="row">
 
     <div class="col-md-8 order-md-1 mxauto">
       <h4 class="mb-3">Заполнение формы</h4>
       <form action="{% url 'mailsend' typeSeminar.id  %}" method="POST" class="needs-validation" novalidate="">
-          {% csrf_token %}
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="username">Имя</label>
+          <div class="input-group">
+            {{ form.name }}
+            <div class="invalid-feedback" style="width: 100%;">
+              Имя обязательно
+            </div>
+          </div>
+        </div>
         <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Фамилия</label>
+            {{ form.surname }}
+            <div class="invalid-feedback">
+              Фамилия обязательно
+            </div>
+          </div>
           <div class="col-md-6 mb-3">
             <label for="firstName">Отчество</label>
             {{ form.lastname }}
@@ -29,28 +45,7 @@
               Отчество обязательно
             </div>
           </div>
-          <div class="col-md-6 mb-3">
-            <label for="lastName">Фамилия</label>
-              {{ form.surname }}
-            <div class="invalid-feedback">
-              Фамилия обязательно
-            </div>
-          </div>
         </div>
-
-        <div class="mb-3">
-          <label for="username">Имя</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">@</span>
-            </div>
-            {{ form.name }}
-            <div class="invalid-feedback" style="width: 100%;">
-              Имя обязательно
-            </div>
-          </div>
-        </div>
-
         <div class="mb-3">
           <label for="email">Email <span class="text-muted">(Обязательно)</span></label>
           {{ form.email }}
@@ -58,27 +53,31 @@
             email обязательно
           </div>
         </div>
-
-
-
+        <div class="mb-3">
+          <label for="universityjob">Укажите вуз, в котором вы работаете* <span class="text-muted">(Обязательно)</span></label>
+          {{ form.universityjob }}
+          <div class="invalid-feedback">
+            Укажите вуз, в котором вы работаете обязательно
+          </div>
+        </div>
         <div class="mb-3">
           <label for="address2">Контактный телефон:</label>
-            {{ form.phone }}
+          {{ form.phone }}
         </div>
-<!--         <div class="mb-3">-->
-<!--          <label for="address2">Укажите вуз, в котором вы работаете*</label>-->
-<!--             {{ form.universityjob }}-->
-<!--        </div>-->
-<!--          <div class="mb-3">-->
-<!--          <label for="address">Укажите Вашу должность:</label>-->
-<!--          {{ form.position }}-->
+        <!--         <div class="mb-3">-->
+        <!--          <label for="address2">Укажите вуз, в котором вы работаете*</label>-->
+        <!--             {{ form.universityjob }}-->
+        <!--        </div>-->
+        <!--          <div class="mb-3">-->
+        <!--          <label for="address">Укажите Вашу должность:</label>-->
+        <!--          {{ form.position }}-->
 
-<!--        </div>-->
+        <!--        </div>-->
 
         <div class="custom-control custom-checkbox">
-            {{ form.consent }}
+          {{ form.consent }}
           <label class="custom-control-label" for="save-info">
-                Ваше согласие на обработку персональных данных: *</label>
+            Ваше согласие на обработку персональных данных: *</label>
         </div>
 
         <button class="btn btn-primary btn-lg btn-block" type="submit">Отправить</button>

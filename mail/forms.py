@@ -4,9 +4,11 @@ from .models import Mail
 
 class MailForm(forms.ModelForm):
 
-    surname = forms.CharField(
+    name = forms.CharField(
+        label = "Пишите свою имя",
         widget=forms.TextInput(attrs={
-            'class': 'form-control col-6',
+            'class':'form-control col-6',
+            'placeholder':'Пишите имя'
         })
     )
     lastname = forms.CharField(
@@ -14,11 +16,18 @@ class MailForm(forms.ModelForm):
             'class': 'form-control col-6',
         })
     )
-    # universityjob = forms.CharField(
-    #     widget=forms.TextInput(attrs={
-    #         'class': 'form-control col-6',
-    #     })
-    # )
+
+    surname = forms.CharField(
+        widget=forms.TextInput(attrs={
+            'class': 'form-control col-6',
+        })
+    )
+    
+    universityjob = forms.CharField(
+        widget=forms.TextInput(attrs={
+            'class': 'form-control col-6',
+        })
+    )
     # position = forms.CharField(
     #     widget=forms.TextInput(attrs={
     #         'class': 'form-control col-6',
@@ -29,19 +38,15 @@ class MailForm(forms.ModelForm):
             'class': 'custom-control-input',
         })
     )
-    name = forms.CharField(
-        label = "Пишите свою имя",
-        widget=forms.TextInput(attrs={
-            'class':'form-control col-6',
-            'placeholder':'Пишите имя'
-        })
-    )
+  
 
     email = forms.EmailField(
         label = "Пишите свою почту)",
         widget=forms.EmailInput(attrs={
             'class':'form-control col-6',
-            'placeholder':'arman@example.com'
+            'placeholder':'arman@example.com',
+            'required':True,
+            'pattern': "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
         })
     )
 

@@ -36,6 +36,7 @@ def index(request,pk):
             # return redirect('mailsend')
         else:
             messages.error(request, 'Вы ввели неправильные данные')
+            print(form)
             return redirect(reverse('mailsend',args=[pk]))
 
     else:
