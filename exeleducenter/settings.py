@@ -3,21 +3,22 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '2bfilmi^rxbihkryf&7mdjzni=k+!@01*az&0jk-#qu70z1v34'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+try:
+    from .local import *
+    DEBUG = True
+except:
+    DEBUG = False
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
 else:
     ALLOWED_HOSTS = ['89.219.32.53', 'excellentcenter.kz', 'localhost']
-
 
 # Application definition
 
@@ -29,9 +30,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mail',
-    'eduapp'
+    'eduapp',
+    'feedback'
 ]
-INSTALLED_APPS += ('django_summernote', )
+INSTALLED_APPS += ('django_summernote',)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,7 +50,7 @@ ROOT_URLCONF = 'exeleducenter.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,8 +85,8 @@ else:
             'PASSWORD': 'baguvix123F',
             'HOST': 'localhost',
             'PORT': ''
+        }
     }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -104,7 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -118,12 +119,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-
-EMAIL_HOST = 'post.mail.kz' 
+EMAIL_HOST = 'post.mail.kz'
 EMAIL_HOST_USER = 'excellent@mail.kz'
-EMAIL_HOST_PASSWORD = 'baguvix123F' 
-EMAIL_PORT = 587 
+EMAIL_HOST_PASSWORD = 'baguvix123F'
+EMAIL_PORT = 587
 EMAIL_USE_TLS = False
 
 # Static files (CSS, JavaScript, Images)
@@ -141,9 +140,6 @@ else:
         BASE_DIR / 'static'
     ]
     STATIC_ROOT = BASE_DIR / 'staticfiles'
-    
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
-
-

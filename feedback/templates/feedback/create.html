@@ -1,0 +1,13 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% block content %}
+    <div class="container s-container" style="
+max-width:600px;">
+        <h1 class="s-title">Оставьте отзыв</h1>
+        <form action="{% url 'create-feedback' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input class="s-button btn btn-primary btn-lg btn-block" type="submit" value="Отправить">
+        </form>
+    </div>
+{% endblock %}

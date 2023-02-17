@@ -1,0 +1,37 @@
+
+
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% block content %}
+    <div class="container s-container">
+        {% if page_obj %}
+            <div class="block_scale-2">
+                <h2 class="title_scale-2">Отзывы от клиентов</h2>
+            </div>
+            <div class="feedback-grid">
+                {% for feedback in page_obj %}
+                    <blockquote class="q-card q-card-color-2">
+                        <div class="content">{{ feedback.text }}
+                        </div>
+                        <div class='author'>{{ feedback.full_name }}</div>
+                    </blockquote>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="pagination" style="display: flex; justify-content: center; padding: 30px 0px">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; К началу</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Предыдущий</a>
+        {% endif %}
+        <span class="current">
+            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+        </span>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Следующий</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Последний &raquo;</a>
+        {% endif %}
+    </span>
+        </div>
+    </div>
+{% endblock %}

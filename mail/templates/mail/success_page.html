@@ -1,0 +1,12 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% block content %}
+    <div class="container s-container" >
+        <div class="s-img">
+            <img src="{% static 'images/logo/logo.png' %}"/>
+        </div>
+        <h1 class="s-title">Спасибо за регистрацию</h1>
+        <p class="s-description">{{ seminar.name }}</p>
+        <a href="/" class="s-button btn btn-primary btn-lg btn-block">Домой</a>
+    </div>
+{% endblock %}

@@ -19,7 +19,7 @@
 
     <div class="col-md-8 order-md-1 mxauto">
       <h4 class="mb-3">Заполнение формы</h4>
-      <form action="{% url 'mailsend' typeSeminar.id  %}" method="POST" class="needs-validation" novalidate="">
+      <form action="{% url 'mailsend' typeSeminar.id  %}" method="POST" class="needs-validation">
         {% csrf_token %}
         <div class="mb-3">
           <label for="username">Имя</label>
