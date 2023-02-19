@@ -157,7 +157,6 @@ body {
 
 .card-row {
     width: 100%;
-    display: grid;
     column-gap: 30px;
     column-count: 1;
     -webkit-column-count: 1;
