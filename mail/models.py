@@ -12,7 +12,7 @@ class TypeSeminar(models.Model):
         verbose_name_plural = "Типы семинара"
 
     def __str__(self):
-        return self.name
+        return self.description
 
 
 class Mail(models.Model):
