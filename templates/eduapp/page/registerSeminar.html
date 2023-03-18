@@ -10,7 +10,7 @@
         {% for typeSeminar in typeSeminars %}
         <a href="{% url 'mailsend' typeSeminar.id %}" class="choose__item">
             <img class="choose__img" src="{{typeSeminar.image.url}}" alt="">
-            <h2  class="choose__title">{{typeSeminar.name}}</h2>
+            <h2  class="choose__title">{{typeSeminar.description}}</h2>
             <div class="choose__button-container">
                 <div class="choose__button" href="#">Выбрать</div>
             </div> 
