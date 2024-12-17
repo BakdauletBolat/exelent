@@ -607,7 +607,6 @@ label {
 }
 
 .registerSeminar {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -679,7 +678,6 @@ label {
 
 @media screen and (max-width: 800px) {
     .registerSeminar {
-        height: auto;
         padding: 110px 0px;
     }
 
