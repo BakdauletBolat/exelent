@@ -1,15 +1,3 @@
-$(() => {
-    $(document).ready(function () {
-        var hamburger = $("#burger_menu");
-        hamburger.click(function () {
-            hamburger.toggleClass("active");
-            return false;
-        });
-    });
-
-
-});
-
 aboutUs = new Tabber('tabs-item', 'content_item', 'tabs');
 aboutUs.hideTabContent();
 aboutUs.showTabContent(0);
@@ -40,6 +28,7 @@ const btn = document.getElementById('burger_menu');
 const menu = document.querySelector('.menu');
 btn.addEventListener('click', () => {
     menu.classList.toggle('active');
+    btn.classList.toggle('active');
 })
 
 
